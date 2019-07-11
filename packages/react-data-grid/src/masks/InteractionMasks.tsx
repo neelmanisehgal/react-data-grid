@@ -505,7 +505,8 @@ export default class InteractionMasks extends React.Component<InteractionMasksPr
   onSelectCellRangeStarted = (selectedPosition: Position): void => {
     this.setState({
       selectedRange: this.createSingleCellSelectedRange(selectedPosition, true),
-      selectedPosition
+      selectedPosition,
+      isEditorEnabled: false
     }, () => {
       if (this.props.onCellRangeSelectionStarted) {
         this.props.onCellRangeSelectionStarted(this.state.selectedRange);
